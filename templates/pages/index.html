@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut  icon"
+      href="{% static 'img/logo.png' %}"
+      type="image/png"
+    />
+    <title>Smart for green Shop</title>      
+    <style>
+      body{
+        background-color: #1e602e;
+      }
+      .main h1{
+        color: white;
+      }
+      .main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction:row;
+        gap: 10px;
+        margin-top: 250px;
+      }
+      .navbar ul{
+        list-style-type:none;
+      }
+      .navbar ul li a{
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="navbar">
+      <ul>
+        <li><a href="{% url 'products' %}">All Products</a></li>
+      </ul>
+    </div>
+    <div class="main">
+      <l-helix size="45" speed="2.5" color="white"></l-helix>
+      <h1>Welcome To Smart For Green Shop</h1>
+      <l-helix size="45" speed="2.5" color="white"></l-helix>
+    </div>
+    <!-- <img src="{% static 'img/logo.png' %}" alt="" /> -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/helix.js"></script>
+  </body>
+</html>

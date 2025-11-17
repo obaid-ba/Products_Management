@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut  icon" href="{% static 'img/logo.png' %}" type="image/png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>All Products</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <style>
+    .pro .icon,
+    .pro .icon2 {
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      font-size: 15px;
+      border: 1px solid #cce7d0;
+      position: absolute;
+      bottom: 20px;
+      transition: 0.5s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .pro .icon {
+      right: 40px;
+      color: var(--main-color);
+      background-color: #e8f6ea;
+    }
+
+    .pro .icon2 {
+      right: 10px;
+      color: red;
+      background-color: rgba(255, 157, 157, 0.651);
+    }
+
+    .pro .icon2:hover {
+      width: 80px;
+      color: white;
+      background-color: red;
+    }
+
+    .pro .icon:hover {
+      width: 80px;
+      color: white;
+      background-color: var(--main-color);
+    }
+
+    #products {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .navbar ul {
+      display: flex;
+      gap: 20px;
+    }
+  </style>
+
+  <body>
+    <nav class="navbar">
+      <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'newproduct' %}">New Product</a></li>
+      </ul>
+      <ul>
+        <li>
+          <i class="fa-solid fa-phone"></i>
+          +216 93 26 75 45
+        </li>
+        <li><a target="_blank" href="https://www.facebook.com/SmartForGreen"><i class="fa-brands fa-facebook"></i></a>
+        </li>
+        <li><a target="_blank" href="https://www.linkedin.com/company/smart4green/posts/?feedView=all"><i
+              class="fa-brands fa-linkedin"></i></a></li>
+        <li><a target="_blank" href="https://www.youtube.com/@smartforgreen"><i class="fa-brands fa-youtube"></i></a>
+        </li>
+      </ul>
+    </nav>
+    <div id="products">
+      {% for product in products %}
+      <div class="pro">
+        <img src="{{product.image.url}}" alt="">
+        <div class="des">
+          <span>{{product.name}}</span>
+          <h5>{{product.content}}</h5>
+          <div class="star">
+            <i class="iconify fa-solid fa-star"></i>
+            <i class="iconify fa-solid fa-star"></i>
+            <i class="iconify fa-solid fa-star"></i>
+            <i class="iconify fa-solid fa-star"></i>
+            <i class="iconify fa-solid fa-star"></i>
+          </div>
+          <h4>${{product.price}}</h4>
+        </div>
+        <div class="btns">
+          <a href="{% url 'editproduct' product.id %}">
+            <i class="icon fa-solid fa-file-pen"></i>
+          </a>
+          <a href="{% url 'deleteproduct' product.id %}">
+            <i class="icon2 fa-solid fa-trash"></i>
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+
+</html>

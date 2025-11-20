@@ -6,6 +6,7 @@ The interface is clean, modern, and responsive — perfect for small businesses 
 
 ## ✨ Features
 ✔️ Add new products with name, description, price, and image
+#
 ✔️ Display all products in modern UI cards
 ✔️ Delete and update products
 ✔️ Responsive UI with clean green-themed design

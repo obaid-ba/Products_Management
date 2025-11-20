@@ -26,10 +26,10 @@ The interface is clean, modern, and responsive — perfect for small businesses 
 <img width="1919" height="882" alt="Capture d&#39;écran 2025-11-17 190758" src="https://github.com/user-attachments/assets/73135aa0-f177-4e5c-a1de-2c03bb84b30c" />
 
 ## 🏗️ Technologies Used
-Python 3.x <cd>
-Django 4.x / 5.x <cd> 
-HTML5 / CSS3 <cd>
-SQLite (default DB) <cd>
+- Python 3.x <cd>
+- Django 4.x / 5.x <cd> 
+- HTML5 / CSS3 <cd>
+- SQLite (default DB) <cd>
 
 ## About Creator
 <p align="left">
